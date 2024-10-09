@@ -451,9 +451,9 @@ img {
 .skills__icon {
   margin-right: var(--mb-0-75);
 }
-
 .skills__title {
   font-size: var(--h3-font-size);
+  text-align: center;
 }
 
 .skills__arrow {
@@ -462,8 +462,22 @@ img {
 }
 
 .skills__list {
-  row-gap: 1.5rem;
-  padding-left: 2.7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Automatically fill the row and adjust the number of columns based on the content width */
+  gap: 2rem; /* Adjust as necessary */
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Skills Data Styling */
+.skills__data {
+  margin-bottom: 1rem; /* Adds space below each item */
 }
 
 .skills__titles {
@@ -611,6 +625,83 @@ img {
 
 .qualification__button.qualification__active {
   color: var(--first-color);
+}
+
+/*=================== Experience Section ===================*/
+
+.experience__container {
+  row-gap: 2rem;
+}
+
+.experience__content {
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.experience__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+}
+
+.experience__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.experience__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.experience__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.experience__calender {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+}
+
+.experience__arrow {
+  font-size: 1.5rem;
+  transition: 0.4s;
+}
+
+.experience__list {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  overflow: auto;
+  height: auto; /* Adjust based on content */
+}
+.experience__open .experience__list {
+  height: auto;
+}
+
+.experience__content.experience__open .experience__list {
+  height: max-content;
+  opacity: 1;
+  margin-top: var(--mb-1-5);
+}
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+.experience__description {
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: var(--mb-1-5);
 }
 
 /*================= Services ==================*/
